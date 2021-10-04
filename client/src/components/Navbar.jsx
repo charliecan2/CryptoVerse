@@ -15,18 +15,18 @@ const Navbar = () => {
                 </Typography.Title>
             </div>
             <Menu theme="dark">
-                <MenuItem icon={<HomeOutlined />}>
+                <Menu.Item icon={<HomeOutlined />}>
                     <Link to="/">Home</Link>
-                </MenuItem>
-                <MenuItem icon={<FundOutlined />}>
-                    <Link to="/cryptocurrencies"></Link>
-                </MenuItem>
-                <MenuItem icon={<MoneyCollectOutlined />}>
+                </Menu.Item>
+                <Menu.Item icon={<FundOutlined />}>
+                    <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+                </Menu.Item>
+                <Menu.Item icon={<MoneyCollectOutlined />}>
                     <Link to="/exchanges">Exchanges</Link>
-                </MenuItem>
-                <MenuItem icon={<BulbOutlined />}>
+                </Menu.Item>
+                <Menu.Item icon={<BulbOutlined />}>
                     <Link to="/news">News</Link>
-                </MenuItem>
+                </Menu.Item>
             </Menu>
         </div>
     )
