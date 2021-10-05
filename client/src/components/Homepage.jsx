@@ -1,9 +1,16 @@
 import React from 'react';
 import 'millify';
 import { Typography, Row, Col, Statistic } from 'antd';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
+import { useGetCryptosQuery } from '../services/cryptoAPI';
 
 const Homepage = () => {
+
+    const { data, isFetching } = useGetCryptosQuery();
+
+    console.log(data);
+
     return (
         <>
             <Typography.Title level={2} className="heading">
