@@ -47,7 +47,7 @@ const Homepage = () => {
                 <Typography.Title level={2} className="home-title">Latest Cryptocurrency News</Typography.Title>
                 <Typography.Title level={3} className="show-more"><Link to="/news">Show more</Link></Typography.Title>
             </div>
-            <News />
+            <News simplified />
         </>
     )
 }
