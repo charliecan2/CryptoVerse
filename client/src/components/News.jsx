@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Select, Typography, Row, Col, Avatar, Card, Input } from 'antd';
+import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
 import moment from 'moment';
+import Loader from './Loader';
 
 import { useGetNewsQuery } from '../services/newsAPI';
 import { useGetCoinPriceQuery } from '../services/cryptoAPI'
@@ -9,10 +10,10 @@ const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=Ne
 
 const News = ({ simplified }) => {
     const [newsFilter, setNewsFilter] = useState("Cryptocurrency");
-    const { data: cryptoNews } = useGetNewsQuery({ newsCategory: newsFilter, count: simplified ? 6 : 12});
+    const { data: cryptoNews, isFetching } = useGetNewsQuery({ newsCategory: newsFilter, count: simplified ? 6 : 12});
     const { data } = useGetCoinPriceQuery(100);
 
-    if(!cryptoNews?.value) return 'Loading...';
+    if (isFetching) return <Loader />;
 
     return (
         <Row gutter={[24, 24]}>
